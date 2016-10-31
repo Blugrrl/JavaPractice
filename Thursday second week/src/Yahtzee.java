@@ -8,6 +8,7 @@ public class Yahtzee {
 	}
 
 	public static int keepRolling() {
+//		RollingDice rollDice = new RollingDice();
 		int dice1 = RollingDice.rollDice();
 		int dice2 = RollingDice.rollDice();
 		int dice3 = RollingDice.rollDice();
