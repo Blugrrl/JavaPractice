@@ -15,7 +15,7 @@ public class MyFirstGameInJava {
 		String chooseFirst = Username.nextLine();
 		String firstOption = chooseFirst;
 		switch (chooseFirst.toLowerCase()) {
-
+		case "hit the tree": case "hit":
 		case "hit tree":
 			System.out.println("A mysterious fruit falls from the tree");
 			System.out.println("You can either eat the fruit or throw it");
@@ -37,6 +37,7 @@ public class MyFirstGameInJava {
 			System.out.println("You eat the fruit and feel bad");
 			System.out.println("You start feeling too weak, and lie down. You die..");
 			break;
+		case "throw": case "throw it": 
 		case "throw fruit":
 			System.out.println("By throwing the coconut, you awaken a tiger and he eats you");
 			System.out.println("You are dead");
@@ -46,14 +47,27 @@ public class MyFirstGameInJava {
 			System.out.println("You died...");
 			break;
 		case "walk":
-			System.out.println("You walked through the village, and you find a boat and leave the island");
-			System.out.println("You win!");
+			System.out.println("You walked through the village, and you reach a fork in the road, "
+					+ "one way leads through a jungle, the other by the shore. Choose wisely...");
 			break;
 		default:
 			System.out.print("Nothing happened");
 
 		}
-		System.out.println("The end! Hope you enjoyed your adventure!!");
+		
+		String chooseThird = Username.nextLine();
+		
+		switch (chooseThird.toLowerCase()) {
+		
+		case "jungle": 
+			System.out.println("You walk slowly to the jungle, hearing a roar in the distance");
+			System.out.println("");
+		
+		
+		}
+		
+		
+//		System.out.println("The end! Hope you enjoyed your adventure!!");
 	}
 
 }
