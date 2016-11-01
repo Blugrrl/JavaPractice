@@ -1,20 +1,24 @@
 import java.util.Scanner;
+import javax.swing.JOptionPane;
+//import javax.swing.JPanel;
+//import javax.swing.JFrame;
 
 public class MyFirstGameInJava {
 
 	public static void main(String[] args) {
-
+	    String[] choices = { "New game", "Load game", "c", "D", "E", "F" };
+	    String input = (String) JOptionPane.showInputDialog(null, "Choose now...",
+	    		 "Adventure game", JOptionPane.QUESTION_MESSAGE, null, choices, choices[1]);
+System.out.println(input);
+		Scanner scan = new Scanner(System.in);
 		System.out.println("Greetings kind sir / madam! Please enter your name to start the adventure");
-		Scanner Username = new Scanner(System.in);
-		String name = Username.nextLine();
-		System.out.println("Greetings " + name);
+		String Username = JOptionPane.showInputDialog("Greetings kind sir / madam! Please enter your name to start the adventure");
+		System.out.println("Greetings " + Username);
 		System.out.println("Welcome to Choose your own adventure game");
-		System.out.println(
-				"You find yourself on a deserted island in front of some trees, you can either hit the tree, or walk away");
 
-		String chooseFirst = Username.nextLine();
-		String firstOption = chooseFirst;
-		switch (chooseFirst.toLowerCase()) {
+		String firstOption = JOptionPane.showInputDialog("You find yourself on a deserted island in front of some trees, "
+				+ "you can either hit the tree, or walk away");
+		switch (firstOption.toLowerCase()) {
 		case "hit the tree": case "hit":
 		case "hit tree":
 			System.out.println("A mysterious fruit falls from the tree");
@@ -28,8 +32,8 @@ public class MyFirstGameInJava {
 		default:
 			System.out.println("Nothing happens...");
 		}
-
-		String chooseSecond = Username.nextLine();
+		
+		String chooseSecond = JOptionPane.showInputDialog("What will you do?");
 
 		switch (chooseSecond.toLowerCase()) {
 		case "eat": case "1": case "e":
@@ -55,7 +59,7 @@ public class MyFirstGameInJava {
 
 		}
 		
-		String chooseThird = Username.nextLine();
+		String chooseThird = JOptionPane.showInputDialog("");
 		
 		switch (chooseThird.toLowerCase()) {
 		
@@ -63,11 +67,9 @@ public class MyFirstGameInJava {
 			System.out.println("You walk slowly to the jungle, hearing a roar in the distance");
 			System.out.println("");
 		
-		
 		}
-		
-		
-//		System.out.println("The end! Hope you enjoyed your adventure!!");
+				
+		System.out.println("The end! Hope you enjoyed your adventure!!");
 	}
 
 }
