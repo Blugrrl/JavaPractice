@@ -4,12 +4,16 @@ import javax.swing.JOptionPane;
 //import javax.swing.JFrame;
 
 public class MyFirstGameInJava {
+	
 
 	public static void main(String[] args) {
-	    String[] choices = { "New game", "Load game", "c", "D", "E", "F" };
+		
+		Actions die = new Actions();
+		
+	    String[] choices = { "New game", "Load game"};
 	    String input = (String) JOptionPane.showInputDialog(null, "Choose now...",
 	    		 "Adventure game", JOptionPane.QUESTION_MESSAGE, null, choices, choices[1]);
-System.out.println(input);
+	    System.out.println(input);
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Greetings kind sir / madam! Please enter your name to start the adventure");
 		String Username = JOptionPane.showInputDialog("Greetings kind sir / madam! Please enter your name to start the adventure");
@@ -39,16 +43,19 @@ System.out.println(input);
 		case "eat": case "1": case "e":
 		case "eat fruit":
 			System.out.println("You eat the fruit and feel bad");
-			System.out.println("You start feeling too weak, and lie down. You die..");
+			die.youDie();
+			
 			break;
 		case "throw": case "throw it": 
 		case "throw fruit":
 			System.out.println("By throwing the coconut, you awaken a tiger and he eats you");
-			System.out.println("You are dead");
+			die.youDie();
+			
 			break;
 		case "scream":
 			System.out.println("As soon as you scream, a man shoots you down from a window from one of the houses");
-			System.out.println("You died...");
+			die.youDie();
+			
 			break;
 		case "walk":
 			System.out.println("You walked through the village, and you reach a fork in the road, "
