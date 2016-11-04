@@ -9,13 +9,14 @@ public class MyFirstGameInJava {
 	public static void main(String[] args) {
 		
 		Actions die = new Actions();
+		Actions tree = new Actions();
+		Actions walk = new Actions();
 		
 	    String[] choices = { "New game", "Load game"};
 	    String input = (String) JOptionPane.showInputDialog(null, "Choose now...",
 	    		 "Adventure game", JOptionPane.QUESTION_MESSAGE, null, choices, choices[1]);
 	    System.out.println(input);
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Greetings kind sir / madam! Please enter your name to start the adventure");
 		String Username = JOptionPane.showInputDialog("Greetings kind sir / madam! Please enter your name to start the adventure");
 		System.out.println("Greetings " + Username);
 		System.out.println("Welcome to Choose your own adventure game");
@@ -25,13 +26,10 @@ public class MyFirstGameInJava {
 		switch (firstOption.toLowerCase()) {
 		case "hit the tree": case "hit":
 		case "hit tree":
-			System.out.println("A mysterious fruit falls from the tree");
-			System.out.println("You can either eat the fruit or throw it");
+			tree.hitTree();
 			break;
 		case "walk away":
-			System.out.println("You walk for some time and find a village. Maybe it is not so deserted!");
-			System.out.println(
-					"The village appears empty, you can either yell to see if anybody answers, or you can keep walking");
+			walk.walkAway();
 			break;
 		default:
 			System.out.println("Nothing happens...");
@@ -63,7 +61,6 @@ public class MyFirstGameInJava {
 			break;
 		default:
 			System.out.print("Nothing happened");
-
 		}
 		
 		String chooseThird = JOptionPane.showInputDialog("");
