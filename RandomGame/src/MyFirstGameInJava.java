@@ -8,13 +8,15 @@ public class MyFirstGameInJava {
 
 	public static void main(String[] args) {
 		
+		
+		
 		Actions die = new Actions();
 		Actions tree = new Actions();
 		Actions walk = new Actions();
 		
 	    String[] choices = { "New game", "Load game"};
 	    String input = (String) JOptionPane.showInputDialog(null, "Choose now...",
-	    		 "Adventure game", JOptionPane.QUESTION_MESSAGE, null, choices, choices[1]);
+	    		 "Adventure game", JOptionPane.QUESTION_MESSAGE, null, choices, choices[0]);
 	    System.out.println(input);
 		Scanner scan = new Scanner(System.in);
 		String Username = JOptionPane.showInputDialog("Greetings kind sir / madam! Please enter your name to start the adventure");
