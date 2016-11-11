@@ -121,7 +121,9 @@ public class Dungeon {
 		}
 	
 		System.out.println("########################");
+		System.out.println("#                      #");
 		System.out.println("# Thanks for playing!! #");
+		System.out.println("#                      #");
 		System.out.println("########################");
 	}
 
