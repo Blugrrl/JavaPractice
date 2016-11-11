@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-
+import java.lang.Enum;
 
 public class EmployeeMain { 
 	
@@ -40,8 +40,6 @@ public class EmployeeMain {
 		double totalBonus = EmployeeMain.sumBonus(myEmployees); 
 
 		System.out.println(totalBonus);
-
-		
 
 	}
 
