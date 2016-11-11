@@ -8,9 +8,9 @@ public class Development extends Employee{
 
 	
 
-	public Development (String name, double Salary, String department, int idNumber, Gender gender) {  //constructor i subklassen //konstruktorn har alltid klassnamn. konstuktorn har aldrig returtyp, men det har alltid metoden
+	public Development (String name, double salary, String department, int idNumber, Gender gender) {  //constructor i subklassen //konstruktorn har alltid klassnamn. konstuktorn har aldrig returtyp, men det har alltid metoden
 
-	super(name, Salary);                              //call to constructor in superclass 
+	super(name, salary, idNumber, department, gender);                              //call to constructor in superclass 
 
 
 

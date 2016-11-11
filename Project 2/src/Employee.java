@@ -1,20 +1,25 @@
+
 public abstract class Employee {  
 	
-	private String name;
+	private String name;           
 	private double salary;
-	protected final double employeeBonusBase; 
-	abstract public double bonus(); 
-	private static Gender gender; 
+	private int idNumber;
+	public String department; 
+	public Gender gender;
+
+	protected final double employeeBonusBase=3000;
 	
 
-	public Employee (String a, double c) {
-	employeeBonusBase = 3000;  
-	name = a;
-	salary = c;
+	public Employee (String name, double salary, int idNumber, String department, Gender gender) {
+		this.name = name;
+		this.salary = salary;
+		this.idNumber = idNumber;
+		this.gender = gender;
+		this.department = department;
 	}
 
+	abstract public double bonus(); 
 	
-
 	public String getName(){ 
 		return name;
 
@@ -34,7 +39,7 @@ public abstract class Employee {
 	
 	public static enum Gender {
 		FEMALE,
-		MALE;
+		MALE
 	}
 	
 

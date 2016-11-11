@@ -1,10 +1,11 @@
 import java.util.ArrayList;
 
+
 public class EmployeeMain { 
 	
 	
 	public static void main(String[] args) { 
-
+		
 		ArrayList <Employee> myEmployees = new ArrayList <>();
 		Admin a1 = new Admin ("Lars Jansson", 25000, "Administrator", 1964010111, Employee.Gender.MALE);
 		Support s1 = new Support ("Sara Issacs", 22000, "Support", 1995020222, Employee.Gender.FEMALE);
@@ -34,7 +35,7 @@ public class EmployeeMain {
 		myEmployees.add(a5); myEmployees.add(s5); myEmployees.add(d5); myEmployees.add(a6); 
 		myEmployees.add(s6); myEmployees.add(d6); myEmployees.add(s7); myEmployees.add(d7); 
 		
-		
+		System.out.println(a3.gender);
 	
 		double totalBonus = EmployeeMain.sumBonus(myEmployees); 
 
@@ -52,6 +53,7 @@ public class EmployeeMain {
 		return totalBonus;
 
 		}
+	
 		
 }
 
