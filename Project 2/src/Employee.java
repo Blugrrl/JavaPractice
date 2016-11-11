@@ -1,47 +1,41 @@
-public abstract class Employee {   //vi tvingar alla subklasser att implementera en abstralt metod, idf bonusmetod
-
-	private String name;          //private/protected variables 
+public abstract class Employee {  
+	
+	private String name;
 	private double salary;
-	protected final double employeeBonusBase;  //konstant. private kan inte ärvas, protected/public kan ärvas 
-	abstract public double bonus(); //abstract metod för bonus = vi har ingen default metod för bonus, metoden ser olika ut för varje subklass. Klass måste vara abstract om det finns en abtract metod 
-	private Gender gender; 
+	protected final double employeeBonusBase; 
+	abstract public double bonus(); 
+	private static Gender gender; 
 	
 
-	public Employee (String a, double c) {    //superclass constructor employee
-	employeeBonusBase = 3000;   //konstant, behöver inte skickas till konstruktorn när objekten skapas   
+	public Employee (String a, double c) {
+	employeeBonusBase = 3000;  
 	name = a;
 	salary = c;
 	}
 
 	
 
-	public String getName(){      //getters/setters
+	public String getName(){ 
 		return name;
 
 	}
 
 
-	public void setSalary(double salary){ //getters/setters
-
+	public void setSalary(double salary){ 
 	this.salary=salary;
-
+	
 	}
 
 
-	public double getSalary() {  //getters/setters
-
+	public double getSalary() {  
 	return salary;
 
 	}
 	
 	public static enum Gender {
 		FEMALE,
-		MALE
+		MALE;
 	}
-	
-	
-
-
 	
 
 }
