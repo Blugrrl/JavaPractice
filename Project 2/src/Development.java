@@ -8,9 +8,8 @@ public class Development extends Employee{
 
 	
 
-	public Development (String name, double salary, String department, int idNumber, Gender gender) {  //constructor i subklassen //konstruktorn har alltid klassnamn. konstuktorn har aldrig returtyp, men det har alltid metoden
-
-	super(name, salary, idNumber, department, gender);                              //call to constructor in superclass 
+	public Development (String name, double salary, String department, int idNumber, Gender gender) {  
+	super(name, salary, idNumber, department, gender); 
 
 
 
@@ -18,10 +17,8 @@ public class Development extends Employee{
 
 	
 
-	public double bonus() {             //method med returtyp double 
-
+	public double bonus() {
 	double bonus = employeeBonusBase * numberOfapplications; 
-
 	return bonus; 
 
 	
@@ -30,7 +27,7 @@ public class Development extends Employee{
 
 	
 
-	public void anOtherApplication() {   //method med returtyp void
+	public void anOtherApplication() {  
 
 	numberOfapplications +=1;
 

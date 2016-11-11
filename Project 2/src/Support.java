@@ -8,15 +8,15 @@ int numbersOfServerCrasches=0;
 
 
 
-	public Support(String name, double salary, String department, int idNumber, Gender gender) {  //constructor i subklassen //konstruktorn har alltid klassnamn. konstuktorn har aldrig returtyp, men det har alltid metoden 
+	public Support(String name, double salary, String department, int idNumber, Gender gender) { 
 
-	super(name, salary, idNumber, department, gender);   //call to constructor in superclass 
+	super(name, salary, idNumber, department, gender);
 
 	}
 
 	
 
-	public double bonus(){      //method med returtyp double 
+	public double bonus(){ 
 
 		double bonus = employeeBonusBase-numbersOfServerCrasches;
 		return bonus;           
@@ -25,7 +25,7 @@ int numbersOfServerCrasches=0;
 
 
 
-    public void anotherServerCrash(){ //method med returtyp void
+    public void anotherServerCrash(){ 
 
 	numbersOfServerCrasches=+1;
 
