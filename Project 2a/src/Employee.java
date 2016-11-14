@@ -1,6 +1,7 @@
 
 public abstract class Employee {  
 	
+	static int employeeNumber;
 	private String name;           
 	private double salary;
 	private int idNumber;
@@ -15,6 +16,7 @@ public abstract class Employee {
 		this.idNumber = idNumber;
 		this.gender = gender;
 		this.department = department;
+		employeeNumber++;
 	}
 
 	abstract public double bonus(); 
