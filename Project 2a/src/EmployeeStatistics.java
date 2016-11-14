@@ -16,7 +16,7 @@ public class EmployeeStatistics extends Employee {
 		System.out.println("3. Lowest salary in company");
 		System.out.println("4. Total bonus in company");
 		System.out.println("5. Percentage of women in company");
-//		System.out.println("6. Män i procent i de olika arbetsrollerna");
+		System.out.println("6. Men % in various departments");
 		System.out.println("7. Return to main menu");
 		System.out.println("0. Exit");
 		System.out.println("Choose: ");
@@ -38,9 +38,9 @@ public class EmployeeStatistics extends Employee {
 			break;
 		case 7:
 			break;
-		case 0:
+		case 0: System.out.println("Thank you for using the program. Goodbye");
 			break;
-		default: System.out.println("Sorry, wrong input");
+		default: System.out.println("Sorry, wrong input.");
 			}
 		
 		}
@@ -73,7 +73,7 @@ public class EmployeeStatistics extends Employee {
 	}
 	
 	public static void lowestSalary() {
-		double lowestSalary = 25000;
+		double lowestSalary = EmployeeMain.myEmployees.get(0).getSalary();
 		for (Employee e : EmployeeMain.myEmployees) {
 			if(lowestSalary > e.getSalary()) {
 				lowestSalary = e.getSalary();
@@ -91,6 +91,7 @@ public class EmployeeStatistics extends Employee {
 			}
 		}
 		System.out.println("The % of women in the company is: " + 100.00 * womenCount/EmployeeMain.myEmployees.size() + "%");
+		System.out.println("The number of women working in the company: " + womenCount);
 	}
 
 }
