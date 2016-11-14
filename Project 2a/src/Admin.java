@@ -6,7 +6,7 @@ public class Admin extends Employee {
 	double bonus;
 
 
-	public Admin (String name, double salary, String department, int idNumber, Gender gender) {  
+	public Admin (int employeeNumber, String name, double salary, String department, int idNumber, Gender gender) {  
 	super(name, salary, idNumber, department, gender);
 
 	}
