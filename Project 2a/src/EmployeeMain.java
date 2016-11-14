@@ -35,7 +35,7 @@ public class EmployeeMain {
 				//call method();			
 			}
 			else if (choice == 2) {
-				//call method();		
+				EmployeeStatistics.employeeStatisticsMenu();		
 			}
 			else if (choice == 0) {
 				sc.close();
