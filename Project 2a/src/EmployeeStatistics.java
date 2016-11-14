@@ -18,8 +18,9 @@ public class EmployeeStatistics extends Employee {
 		System.out.println("4. Total bonus in company");
 		System.out.println("5. Percentage of women in company");
 		System.out.println("6. Number of men employed in various departments");
-		System.out.println("7. Return to main menu");
-		System.out.println("8. Calculate again");
+		System.out.println("7. Total number of people in the company and percentage per department");
+		System.out.println("8. Return to main menu");
+		System.out.println("9. Calculate again");
 		System.out.println("0. Exit");
 		System.out.println("Choose: ");
 		
@@ -38,7 +39,9 @@ public class EmployeeStatistics extends Employee {
 			break;
 		case 6: menPercentage();
 			break;
-		case 7:	//exits to main menu
+		case 7:	numberOfEmployees();
+			break;
+		case 8: //exit to main menu 
 			break;
 		case 0: System.out.println("Thank you for using the program. Goodbye");
 			break;
@@ -111,7 +114,31 @@ public class EmployeeStatistics extends Employee {
 			}
 		}
 		System.out.println("The number of men working in Admin: " + adminCount);
+		System.out.println("The % of men in Admin is: " + 100.00 * adminCount/EmployeeMain.myEmployees.size() + "%");
 		System.out.println("The number of men working in Development: " + developmentCount);
+		System.out.println("The % of men in Development is: " + 100.00 * developmentCount/EmployeeMain.myEmployees.size() + "%");
 		System.out.println("The number of men working in Support: " + supportCount);
+		System.out.println("The % of men in Support is: " + 100.00 * supportCount/EmployeeMain.myEmployees.size() + "%");
+	}
+	
+	public static void numberOfEmployees() {
+		int percentageOfAdmin = 0;
+		int percentageOfDevelopment = 0;
+		int percentageOfSupport = 0;
+		for (Employee e: EmployeeMain.myEmployees) {
+			if(e.department.equals("Admin")) {
+				percentageOfAdmin++;
+			}
+			else if(e.department.equals("Development")) {
+				percentageOfDevelopment++;
+			}
+			else if(e.department.equals("Support")) {
+				percentageOfSupport++;
+			}
+		}
+		System.out.println("Total number of employees: " + EmployeeMain.myEmployees.size());
+		System.out.println("The % of employees in Admin is: " + 100.00 * percentageOfAdmin/EmployeeMain.myEmployees.size() + "%");
+		System.out.println("The % of employees in Development is: " + 100.00 * percentageOfDevelopment/EmployeeMain.myEmployees.size() + "%");
+		System.out.println("The % of employees in Support is: " + 100.00 * percentageOfSupport/EmployeeMain.myEmployees.size() + "%");
 	}
 }
