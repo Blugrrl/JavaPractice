@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 public abstract class Employee {  
 	
@@ -10,7 +9,6 @@ public abstract class Employee {
 
 	protected final double employeeBonusBase=3000;
 	
-
 	public Employee (String name, double salary, int idNumber, String department, Gender gender) {
 		this.name = name;
 		this.salary = salary;
