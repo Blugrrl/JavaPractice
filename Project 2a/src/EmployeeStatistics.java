@@ -2,13 +2,14 @@ import java.util.Scanner;
 
 public class EmployeeStatistics extends Employee {
 
-	static Scanner sc = new Scanner(System.in);
+	static Scanner sc = new Scanner(System.in);	
 	
 	public EmployeeStatistics(String name, double salary, int idNumber, String department, Gender gender) {
 		super(name, salary, idNumber, department, gender);
 	}
 	
 	public static void employeeStatisticsMenu() {
+		
 		System.out.println("\nChoose from Menu");
 		System.out.println("------------------------------------------------------");
 		System.out.println("1. Average salary in company");
@@ -16,8 +17,9 @@ public class EmployeeStatistics extends Employee {
 		System.out.println("3. Lowest salary in company");
 		System.out.println("4. Total bonus in company");
 		System.out.println("5. Percentage of women in company");
-		System.out.println("6. Men % in various departments");
+		System.out.println("6. Number of men employed in various departments");
 		System.out.println("7. Return to main menu");
+		System.out.println("8. Calculate again");
 		System.out.println("0. Exit");
 		System.out.println("Choose: ");
 		
@@ -30,19 +32,18 @@ public class EmployeeStatistics extends Employee {
 			break;
 		case 3: lowestSalary();
 			break;
-		case 4: System.out.println("There is no bonus");
+		case 4: System.out.println("There is no bonus you greedy people.");
 			break;
 		case 5: womenPercentage();
 			break;
-		case 6:
+		case 6: menPercentage();
 			break;
-		case 7:
+		case 7:	//exits to main menu
 			break;
 		case 0: System.out.println("Thank you for using the program. Goodbye");
 			break;
 		default: System.out.println("Sorry, wrong input.");
-			}
-		
+				}
 		}
 
 	
@@ -93,5 +94,24 @@ public class EmployeeStatistics extends Employee {
 		System.out.println("The % of women in the company is: " + 100.00 * womenCount/EmployeeMain.myEmployees.size() + "%");
 		System.out.println("The number of women working in the company: " + womenCount);
 	}
-
+	
+	public static void menPercentage(){
+		int adminCount = 0;
+		int developmentCount = 0;
+		int supportCount = 0;
+		for(Employee e: EmployeeMain.myEmployees) {
+			if(e.gender == Gender.MALE && e.department.equals("Admin")) {
+				adminCount++;
+			}
+			else if (e.gender == Gender.MALE && e.department.equals("Development")) {
+				developmentCount++;
+			}
+			else if (e.gender == Gender.MALE && e.department.equals("Support")) {
+				supportCount++;
+			}
+		}
+		System.out.println("The number of men working in Admin: " + adminCount);
+		System.out.println("The number of men working in Development: " + developmentCount);
+		System.out.println("The number of men working in Support: " + supportCount);
+	}
 }

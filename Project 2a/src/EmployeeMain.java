@@ -32,10 +32,11 @@ public class EmployeeMain {
 			}
 
 			if (choice == 1) {
-				//call method();			
+//				EmployeeManagement.employeeMenu();			
 			}
 			else if (choice == 2) {
-				EmployeeStatistics.employeeStatisticsMenu();		
+				EmployeeStatistics.employeeStatisticsMenu();
+				choice = 0;
 			}
 			else if (choice == 0) {
 				sc.close();
@@ -63,16 +64,16 @@ public class EmployeeMain {
 
 
 	private static void seedEmployees() {
-		Admin a1 = new Admin ("Lars Jansson", 25000, "Administrator", 1964010111, Employee.Gender.MALE);
+		Admin a1 = new Admin ("Lars Jansson", 25000, "Admin", 1964010111, Employee.Gender.MALE);
 		Support s1 = new Support ("Sara Issacs", 22000, "Support", 1995020222, Employee.Gender.FEMALE);
 		Development d1 = new Development ("Johann Strauss", 34000, "Development", 1985030333, Employee.Gender.MALE);
-		Admin a2 = new Admin ("Anna Idunno", 25000, "Administrator", 1986040444, Employee.Gender.FEMALE);
+		Admin a2 = new Admin ("Anna Idunno", 25000, "Admin", 1986040444, Employee.Gender.FEMALE);
 		Support s2 = new Support ("John Doe", 22000, "Support", 1977050555, Employee.Gender.MALE);
 		Development d2 = new Development ("Clara Croft", 35000, "Development", 1985030333, Employee.Gender.FEMALE);
-		Admin a3 = new Admin ("Joakim Lilsson", 26000, "Administrator", 1964010111, Employee.Gender.MALE);
+		Admin a3 = new Admin ("Joakim Lilsson", 26000, "Admin", 1964010111, Employee.Gender.MALE);
 		Support s3 = new Support ("James Spader", 22000, "Support", 1995020222, Employee.Gender.MALE);
 		Development d3 = new Development ("Alice Johansson", 30000, "Development", 1985030333, Employee.Gender.FEMALE);
-		Admin a4 = new Admin ("Michael Berglund", 28000, "Administrator", 1964010111, Employee.Gender.MALE);
+		Admin a4 = new Admin ("Michael Berglund", 28000, "Admin", 1964010111, Employee.Gender.MALE);
 		Support s4 = new Support ("Isabelle Clarke", 22000, "Support", 1995020222, Employee.Gender.FEMALE);
 		Development d4 = new Development ("Elsa Lind", 33000, "Development", 1985030333, Employee.Gender.FEMALE);
 		Admin a5 = new Admin ("Karl Wallin", 21000, "Admin", 1966060666, Employee.Gender.MALE);
