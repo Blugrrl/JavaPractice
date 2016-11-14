@@ -15,11 +15,11 @@ public class EmployeeMain {
 	static int choice = -1;
 	static ArrayList<Employee> myEmployees = new ArrayList<Employee>();
 
-
+	
 	public static void main(String[] args) {
 
 		seedEmployees(); //seed the ArrayList with Employees
-
+		
 
 		while (choice != 0) {		
 			EmployeeMain.mainMenu();
@@ -91,6 +91,11 @@ public class EmployeeMain {
 		myEmployees.add(a5); myEmployees.add(s5); myEmployees.add(d5); myEmployees.add(a6); 
 		myEmployees.add(s6); myEmployees.add(d6); myEmployees.add(s7); myEmployees.add(d7); 
 	}
+	
+//	public ArrayList <Employee> getMyEmployees() {
+//	    return myEmployees;
+//	}
+
 
 
 
