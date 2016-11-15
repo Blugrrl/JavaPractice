@@ -182,6 +182,7 @@ public class EmployeeManagement {
 			System.out.println("1. Register employee");
 			System.out.println("2. Update employee");
 			System.out.println("3. Remove employee");
+			System.out.println("4. Back to main menu");
 			System.out.println("0. Exit");
 			System.out.println("Choose: ");
 
@@ -200,7 +201,10 @@ public class EmployeeManagement {
 			}
 			else if (choice == 3) {
 				RemoveEmployee();
-			}			
+			}
+			else if (choice == 4) {
+				EmployeeMain.main(null);
+			}
 			else if (choice == 0) {
 				System.out.println("\nGoodbye! Thank you for using our software");
 				break;
