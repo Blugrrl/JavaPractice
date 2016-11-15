@@ -11,45 +11,51 @@ public class EmployeeStatistics extends Employee {
 	public static void employeeStatisticsMenu() {
 		
 		int choice = -1;
-		while (choice != 0 || choice !=9) {
+		while (choice != 0 && choice != 10) {
 			System.out.println("\n------------------------------------------------------");
 			System.out.println("Employee Statistics Menu");
 			System.out.println("------------------------------------------------------");
 			System.out.println("1. Average salary in company");
 			System.out.println("2. Highest salary in company");
 			System.out.println("3. Lowest salary in company");
-			System.out.println("4. Bonus per department / person");
-			System.out.println("5. Percentage of women in company");
-			System.out.println("6. Number of men employed in various departments");
-			System.out.println("7. Total nmb. of people in the company and % per department");
-			System.out.println("8. List of former employees");
-			System.out.println("9. Return to main menu");
-			System.out.println("10. Calculate again");
+			System.out.println("4. Total amount of bonus in company");
+			System.out.println("5. Bonus per person in company");
+			System.out.println("6. Percentage of women in company");
+			System.out.println("7. Number of men employed in various departments");
+			System.out.println("8. Total nmb. of people in the company and % per department");
+			System.out.println("9. List of former employees");
+			System.out.println("10. Return to main menu");
+			System.out.println("11. Calculate again");
 			System.out.println("0. Exit");
 			System.out.println("Choose: ");
 		
-		int x = sc.nextInt();
+		choice = sc.nextInt();
 		
-		switch (x) {
+		switch (choice) {
 		case 1: averageSalary();
 			break;
 		case 2: highestSalary();
 			break;
 		case 3: lowestSalary();
 			break;
-		case 4: 
+		case 4: salaryBonus();
 			break;
-		case 5: womenPercentage();
+		case 5: bonusPerEmployee();
 			break;
-		case 6: menPercentage();
+		case 6: womenPercentage();
 			break;
-		case 7:	numberOfEmployees();
+		case 7: menPercentage();
 			break;
-		case 8: listOfFormerEmployees();
+		case 8:	numberOfEmployees();
 			break;
-		case 9: EmployeeMain.main(null);
-		break;
-		case 0: System.out.println("Thank you for using the program. Goodbye");
+		case 9: listOfFormerEmployees();
+			break;
+		case 10: EmployeeMain.main(null);
+			break;
+		case 11: 
+			break;
+		case 0:  
+			System.out.println("\nThank you for using the program. Goodbye");
 			break;
 		default: System.out.println("Sorry, wrong input.");
 				}
@@ -69,7 +75,7 @@ public class EmployeeStatistics extends Employee {
 		for (Employee e: EmployeeMain.myEmployees) {
 			totalSalary += e.getSalary();
 		}
-		System.out.println("The average salary is: " + totalSalary/EmployeeMain.myEmployees.size());
+		System.out.println("\nThe average salary is: " + totalSalary/EmployeeMain.myEmployees.size());
 	}
 	
 	
@@ -80,7 +86,7 @@ public class EmployeeStatistics extends Employee {
 				highestSalary = e.getSalary();
 			}
 		}
-		System.out.println("The highest salary is: " + highestSalary);
+		System.out.println("The highest salary is: " + (int) highestSalary);
 	}
 	
 	public static void lowestSalary() {
@@ -90,24 +96,25 @@ public class EmployeeStatistics extends Employee {
 				lowestSalary = e.getSalary();
 			}
 		}
-		System.out.println("The lowest salary is: " + lowestSalary);
+		System.out.println("The lowest salary is: " + (int) lowestSalary);
 	}
+	
 	
 	public static void salaryBonus() {
-		int bonusCalculation = 0;
+		int totalBonus = 0;
 		for (Employee e: EmployeeMain.myEmployees) {
-			if (e.department.equals("Admin")) {
-				 
-			}
-			else if (e.department.equals("Support")) {
-				
-			}
-			else if (e.department.equals("Development")) {
-				
-			}
+			totalBonus += e.bonus();
 		}
+		System.out.println("\nThe total bonus for everyone in the company is: " + totalBonus);
+
 	}
 	
+	public static void bonusPerEmployee() {
+		System.out.println("");
+		for (Employee e: EmployeeMain.myEmployees) {
+			System.out.println(e.toString() + " \tbonus: " + (int) e.bonus());
+		}
+	}
 	
 	public static void womenPercentage() {
 		int womenCount = 0;
@@ -116,7 +123,7 @@ public class EmployeeStatistics extends Employee {
 				womenCount++;
 			}
 		}
-		System.out.println("The % of women in the company is: " + 100.00 * womenCount/EmployeeMain.myEmployees.size() + "%");
+		System.out.println("\nThe % of women in the company is: " + 100.00 * womenCount/EmployeeMain.myEmployees.size() + "%");
 		System.out.println("The number of women working in the company: " + womenCount);
 	}
 	

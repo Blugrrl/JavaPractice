@@ -33,7 +33,8 @@ public class EmployeeMain {
 			}
 
 			if (choice == 1) {
-				EmployeeManagement.employeeMenu();			
+				EmployeeManagement.employeeMenu();
+				choice = 0;
 			}
 			else if (choice == 2) {
 				EmployeeStatistics.employeeStatisticsMenu();
@@ -73,9 +74,9 @@ public class EmployeeMain {
 		Development d2 = new Development ("Clara Croft", 35000, "Development", 1985030333, Gender.FEMALE);
 		Admin a3 = new Admin ("Joakim Lilsson", 26000, "Admin", 1964010111, Gender.MALE);
 		Support s3 = new Support ("James Spader", 22000, "Support", 1995020222, Gender.MALE);
-		Development d3 = new Development ("Alice Johansson", 30000, "Development", 1985030333, Gender.FEMALE);
-		Admin a4 = new Admin ("Michael Berglund", 28000, "Admin", 1964010111, Gender.MALE);
-		Support s4 = new Support ("Isabelle Clarke", 22000, "Support", 1995020222, Gender.FEMALE);
+		Development d3 = new Development ("Åsa Johansson", 30000, "Development", 1985030333, Gender.FEMALE);
+		Admin a4 = new Admin ("Michael Berg", 28000, "Admin", 1964010111, Gender.MALE);
+		Support s4 = new Support ("Bella Clarke", 22000, "Support", 1995020222, Gender.FEMALE);
 		Development d4 = new Development ("Elsa Lind", 33000, "Development", 1985030333, Gender.FEMALE);
 		Admin a5 = new Admin ("Karl Wallin", 21000, "Admin", 1966060666, Gender.MALE);
 		Support s5 = new Support ("Lucas Jonsson", 23000, "Support", 1977070777, Gender.MALE);
@@ -101,25 +102,7 @@ public class EmployeeMain {
 		EmployeeMain.formerEmployees.add(a1); EmployeeMain.formerEmployees.add(s1);
 		
 	}
-//	public ArrayList <Employee> getMyEmployees() {
-//	    return myEmployees;
-//	}
 
-
-
-
-
-
-
-	/************************     Hannas kod  börjar här    *******************************************************************/
-	public static double sumBonus(ArrayList<Employee> emp){    //metod för att summera bonus, tar parametern arraylist 
-		double totalBonus = 0;   //den totala bonusen för alla anställda börjar från noll, inte från bonusbas 3000
-		for (Employee currentEmployee : emp){   //i array emp gå igenom varje employee. enhanced for loop: du behöver inte veta längd på array. smidigt. denna loop används för att gå igenom hela arraylist, istället för att manuellt plussa ihop allas bonusar ett och ett
-			totalBonus+=currentEmployee.bonus();  // : total bonus=total bonus+ currentEmployee.bonus  //Ett sätt att skriva   X+=5 :  X=X+5
-		}
-		return totalBonus;
-	}
-	/************************     slut på Hannas kod       *******************************************************************/
 }
 
 

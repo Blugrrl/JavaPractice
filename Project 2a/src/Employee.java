@@ -33,22 +33,31 @@ public abstract class Employee {
 	
 	public String getName(){ 
 		return name;
-
 	}
 
-
+	public void setName(String name) {
+		this.name = name;
+	}
+	
 	public void setSalary(double salary){ 
 	this.salary=salary;
 	
 	}
-
-
+	
 	public double getSalary() {  
-	return salary;
+		return salary;
 
 	}
 
+	public String getDepartment() {
+		return department;
+	}
 
+	public void setDepartment(String department) {
+		this.department = department;
+	}
+
+	
 	public int getIdNumber() {
 		return idNumber;
 	}
@@ -60,12 +69,11 @@ public abstract class Employee {
 	
 	public void setIdNumber(int idNumber) {
 		this.idNumber = idNumber;
-	}
-	
+	}	
 	
 	@Override
 	public String toString() {
-		return (staffNumber + " " + name + " " + salary);
+		return (staffNumber + " \t" + name + " \t" + (int) salary);
 }
 	
 	public int getAge() {
