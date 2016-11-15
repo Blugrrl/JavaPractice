@@ -1,12 +1,13 @@
 
 public abstract class Employee {  
 	
-	static int employeeNumber;
+	static int employeeNumber = 1;
 	private String name;           
 	private double salary;
 	private int idNumber;
 	public String department; 
 	public Gender gender;
+	private int staffNumber;
 
 	protected final double employeeBonusBase=3000;
 	
@@ -16,6 +17,7 @@ public abstract class Employee {
 		this.idNumber = idNumber;
 		this.gender = gender;
 		this.department = department;
+		this.staffNumber = employeeNumber;
 		employeeNumber++;
 	}
 
@@ -38,10 +40,20 @@ public abstract class Employee {
 
 	}
 	
-	public static enum Gender {
-		FEMALE,
-		MALE
+//	public static enum Gender {
+//		FEMALE,
+//		MALE
+//	}
+
+	public int getIdNumber() {
+		return idNumber;
 	}
+
+	public void setIdNumber(int idNumber) {
+		this.idNumber = idNumber;
+	}
+	
+	
 	
 		
 	

@@ -8,7 +8,7 @@ int numbersOfServerCrasches=0;
 
 
 
-	public Support(int employeeNumber, String name, double salary, String department, int idNumber, Gender gender) { 
+	public Support(String name, double salary, String department, int idNumber, Gender gender) { 
 
 	super(name, salary, idNumber, department, gender);
 

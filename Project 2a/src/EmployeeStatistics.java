@@ -41,7 +41,7 @@ public class EmployeeStatistics extends Employee {
 			break;
 		case 7:	numberOfEmployees();
 			break;
-		case 8: //exit to main menu 
+		case 8: EmployeeMain.main(null);
 			break;
 		case 0: System.out.println("Thank you for using the program. Goodbye");
 			break;

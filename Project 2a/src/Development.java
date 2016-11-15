@@ -8,7 +8,7 @@ public class Development extends Employee{
 
 	
 
-	public Development (int employeeNumber, String name, double salary, String department, int idNumber, Gender gender) {  
+	public Development (String name, double salary, String department, int idNumber, Gender gender) {  
 	super(name, salary, idNumber, department, gender); 
 
 
