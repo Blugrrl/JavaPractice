@@ -10,7 +10,7 @@ public class EmployeeManagement {
 		String name = EmployeeMain.sc.nextLine(); // empty cash									 
 		System.out.println("Enter salary");
 		double sal = EmployeeMain.sc.nextDouble(); // returns the value to sal 
-		System.out.println("Enter id number (YYYYMMDDNN");
+		System.out.println("Enter id number (YYYYMMDDNN)");
 		int id = EmployeeMain.sc.nextInt();
 
 		System.out.println("Enter department, 1:Development, 2:Admin, 3:Support");
@@ -49,9 +49,10 @@ public class EmployeeManagement {
 
 		System.out.println("The employee named " + name +" is now registered");
 
-		//		for (Employee e : EmployeeMain.myEmployees) {
-		//		System.out.println(e.getIdNumber() + " " + e.getName());
-		//		}
+				for (Employee e : EmployeeMain.myEmployees) {
+				//System.out.println(e.getStaffNumber() + " " + e.getName());
+				System.out.println(e.toString());
+				}
 
 
 	}
@@ -82,7 +83,7 @@ public class EmployeeManagement {
 				for (Employee e : EmployeeMain.myEmployees) {
 					//om rätt idNumber
 					if (e.getIdNumber()== idNumber) {
-						EmployeeMain.myEmployees.remove(e);
+						formerEmployees();
 						System.out.println("idNumber: " + idNumber + " is removed");
 						idNumber = 0;
 						break;
@@ -144,4 +145,14 @@ public class EmployeeManagement {
 		}
 
 	}
+	
+	public static void formerEmployees() {
+		
+		for (Employee e : EmployeeMain.myEmployees)
+		    if (EmployeeMain.myEmployees.contains(e.getStaffNumber())) EmployeeMain.formerEmployees.add(e);
+		
+		for (Employee e : EmployeeMain.formerEmployees)
+		     EmployeeMain.myEmployees.remove(e);
+	}
+	
 }

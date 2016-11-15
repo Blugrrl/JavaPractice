@@ -10,19 +10,23 @@ public class EmployeeStatistics extends Employee {
 	
 	public static void employeeStatisticsMenu() {
 		
-		System.out.println("\nChoose from Menu");
-		System.out.println("------------------------------------------------------");
-		System.out.println("1. Average salary in company");
-		System.out.println("2. Highest salary in company");
-		System.out.println("3. Lowest salary in company");
-		System.out.println("4. Total bonus in company");
-		System.out.println("5. Percentage of women in company");
-		System.out.println("6. Number of men employed in various departments");
-		System.out.println("7. Total number of people in the company and percentage per department");
-		System.out.println("8. Return to main menu");
-		System.out.println("9. Calculate again");
-		System.out.println("0. Exit");
-		System.out.println("Choose: ");
+		int choice = -1;
+		while (choice != 0 || choice !=9) {
+			System.out.println("\n------------------------------------------------------");
+			System.out.println("Employee Statistics Menu");
+			System.out.println("------------------------------------------------------");
+			System.out.println("1. Average salary in company");
+			System.out.println("2. Highest salary in company");
+			System.out.println("3. Lowest salary in company");
+			System.out.println("4. Total bonus in company");
+			System.out.println("5. Percentage of women in company");
+			System.out.println("6. Number of men employed in various departments");
+			System.out.println("7. Total nmb. of people in the company and % per department");
+			System.out.println("8. List of former employees");
+			System.out.println("9. Return to main menu");
+			System.out.println("10. Calculate again");
+			System.out.println("0. Exit");
+			System.out.println("Choose: ");
 		
 		int x = sc.nextInt();
 		
@@ -33,7 +37,7 @@ public class EmployeeStatistics extends Employee {
 			break;
 		case 3: lowestSalary();
 			break;
-		case 4: System.out.println("There is no bonus you greedy people.");
+		case 4: 
 			break;
 		case 5: womenPercentage();
 			break;
@@ -41,12 +45,15 @@ public class EmployeeStatistics extends Employee {
 			break;
 		case 7:	numberOfEmployees();
 			break;
-		case 8: EmployeeMain.main(null);
+		case 8: listOfFormerEmployees();
 			break;
+		case 9: EmployeeMain.main(null);
+		break;
 		case 0: System.out.println("Thank you for using the program. Goodbye");
 			break;
 		default: System.out.println("Sorry, wrong input.");
 				}
+		}
 		}
 
 	
@@ -141,4 +148,11 @@ public class EmployeeStatistics extends Employee {
 		System.out.println("The % of employees in Development is: " + 100.00 * percentageOfDevelopment/EmployeeMain.myEmployees.size() + "%");
 		System.out.println("The % of employees in Support is: " + 100.00 * percentageOfSupport/EmployeeMain.myEmployees.size() + "%");
 	}
+	
+	public static void listOfFormerEmployees() {
+		for (Employee e : EmployeeMain.formerEmployees) {
+			System.out.println(e.toString());
+			}
+	}
+	
 }

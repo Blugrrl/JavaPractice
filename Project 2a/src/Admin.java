@@ -15,9 +15,8 @@ public class Admin extends Employee {
 	public double bonus() {
 	bonus = employeeBonusBase + age*30;
 	return bonus; 
-
-
-
 	}
+	
+	
 
 }

@@ -14,13 +14,14 @@ public class EmployeeMain {
 	static Scanner sc = new Scanner (System.in);
 	static int choice = -1;
 	static ArrayList<Employee> myEmployees = new ArrayList<Employee>();
+	static ArrayList<Employee> formerEmployees = new ArrayList<Employee>();
 
 	
 	public static void main(String[] args) {
 
 		seedEmployees(); //seed the ArrayList with Employees
+		formerEmployees(); 
 		
-
 		while (choice != 0) {		
 			EmployeeMain.mainMenu();
 
@@ -52,7 +53,7 @@ public class EmployeeMain {
 
 	/*******************************      METHODS      ***************************************************/
 
-	public static void mainMenu() {
+	private static void mainMenu() {
 		System.out.println("--------------------------------------------------------");
 		System.out.println("Welcome to our company");
 		System.out.println("--------------------------------------------------------");
@@ -80,7 +81,7 @@ public class EmployeeMain {
 		Support s5 = new Support ("Lucas Jonsson", 23000, "Support", 1977070777, Gender.MALE);
 		Development d5 = new Development("Ludvig Norin", 35000, "Development", 1976060767, Gender.MALE);
 		Admin a6 = new Admin ("Stella Holm", 26000, "Admin", 1999090999, Gender.FEMALE);
-		Support s6 = new Support ("Charlie Ek", 23000, "Support", 1985050858, Gender.MALE);
+		Support s6 = new Support ("Stephan Carlos", 23000, "Support", 1985050858, Gender.MALE);
 		Development d6 = new Development("Erik Lundgren", 32000, "Development", 1955050555, Gender.MALE);
 		Support s7 = new Support ("Ella Berg", 21000, "Support", 1987070887, Gender.FEMALE);
 		Development d7 = new Development("Oscar Blom", 38000, "Development", 1962060226, Gender.MALE);
@@ -93,6 +94,13 @@ public class EmployeeMain {
 		myEmployees.add(s6); myEmployees.add(d6); myEmployees.add(s7); myEmployees.add(d7); 
 	}
 	
+	private static void formerEmployees() {
+		Admin a1 = new Admin("Charlie Ek", 23000, "Admin", 1988010111, Gender.MALE);
+		Support s1 = new Support("Hazim Sekic", 22000, "Support", 1986080612, Gender.MALE);
+		
+		EmployeeMain.formerEmployees.add(a1); EmployeeMain.formerEmployees.add(s1);
+		
+	}
 //	public ArrayList <Employee> getMyEmployees() {
 //	    return myEmployees;
 //	}

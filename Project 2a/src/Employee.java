@@ -8,6 +8,7 @@ public abstract class Employee {
 	public String department; 
 	public Gender gender;
 	private int staffNumber;
+	private int age;
 
 	protected final double employeeBonusBase=3000;
 	
@@ -39,23 +40,31 @@ public abstract class Employee {
 	return salary;
 
 	}
-	
-//	public static enum Gender {
-//		FEMALE,
-//		MALE
-//	}
+
 
 	public int getIdNumber() {
 		return idNumber;
 	}
 
+	public int getStaffNumber() {
+		return staffNumber;
+	}
+
+	
 	public void setIdNumber(int idNumber) {
 		this.idNumber = idNumber;
 	}
 	
 	
+	@Override
+	public String toString() {
+		return (staffNumber + " " + name + " " + salary);
+}
 	
+	public int getAge() {
 		
+		return age;
+	}
 	
 
 }
