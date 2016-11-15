@@ -4,7 +4,7 @@ public class Support extends Employee {
 
 
 
-int numbersOfServerCrasches=0;
+int employeeBonusBase = 3000;
 
 
 
@@ -18,19 +18,9 @@ int numbersOfServerCrasches=0;
 
 	public double bonus(){ 
 
-		double bonus = employeeBonusBase-numbersOfServerCrasches;
+		double bonus = employeeBonusBase * getAge();
 		return bonus;           
 
 	}
-
-
-
-    public void anotherServerCrash(){ 
-
-	numbersOfServerCrasches=+1;
-
-}
-
-	
 
 }

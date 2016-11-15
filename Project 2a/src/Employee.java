@@ -1,3 +1,6 @@
+import java.sql.Date;
+import java.util.Calendar;
+import java.util.Date.*;
 
 public abstract class Employee {  
 	
@@ -8,9 +11,13 @@ public abstract class Employee {
 	public String department; 
 	public Gender gender;
 	private int staffNumber;
-	private int age;
+
 
 	protected final double employeeBonusBase=3000;
+	
+	public Employee() {
+		
+	}
 	
 	public Employee (String name, double salary, int idNumber, String department, Gender gender) {
 		this.name = name;
@@ -62,7 +69,8 @@ public abstract class Employee {
 }
 	
 	public int getAge() {
-		
+		int year = Calendar.getInstance().get(Calendar.YEAR);
+		int age = year - (idNumber / 1000000);
 		return age;
 	}
 	

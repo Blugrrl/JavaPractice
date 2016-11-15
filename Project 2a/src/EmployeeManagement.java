@@ -63,29 +63,33 @@ public class EmployeeManagement {
 
 	public static void RemoveEmployee() {
 
-		int idNumber = -1;
+		int staffNumber = -1;
 
-		while (idNumber != 0) {
+		while (staffNumber != 0) {
+			Employee bardia = null;
 			for (Employee e : EmployeeMain.myEmployees) {
-				System.out.println(e.getIdNumber());
+				System.out.println(e.toString());
 			}
-			System.out.println("Select who to remove: ");
+			System.out.println("Select who to remove (id nr): ");
 
 			try {
-				idNumber = EmployeeMain.sc.nextInt();
+				staffNumber = EmployeeMain.sc.nextInt();
 			}
 			catch (Exception exception) {
-				idNumber = -1;
+				staffNumber = -1;
 			}
 
-			if (idNumber != -1) {
+			if (staffNumber != -1) {
 				int counter = 0;
+				
 				for (Employee e : EmployeeMain.myEmployees) {
 					//om rätt idNumber
-					if (e.getIdNumber()== idNumber) {
-						formerEmployees();
-						System.out.println("idNumber: " + idNumber + " is removed");
-						idNumber = 0;
+					if (e.getStaffNumber() == staffNumber) {
+					bardia = e;
+						
+						//	formerEmployees(counter);
+						System.out.println("idNumber: " + staffNumber + " is removed");
+						staffNumber = 0;
 						break;
 					}
 					//räkna upp antal loopar, kollar om inget personnummer stämmer
@@ -94,9 +98,10 @@ public class EmployeeManagement {
 					}
 					//om idNumber doesn't exist
 					if (counter == EmployeeMain.myEmployees.size()) {
-						System.out.println("idNumber doesn't exist");
+						System.out.println("staffNumber doesn't exist");
 					}
 				}
+				formerEmployees(bardia);
 			}
 			else {
 				System.out.println("Illegal choice");
@@ -146,13 +151,14 @@ public class EmployeeManagement {
 
 	}
 	
-	public static void formerEmployees() {
+	public static void formerEmployees(Employee bardia) {
 		
-		for (Employee e : EmployeeMain.myEmployees)
-		    if (EmployeeMain.myEmployees.contains(e.getStaffNumber())) EmployeeMain.formerEmployees.add(e);
-		
-		for (Employee e : EmployeeMain.formerEmployees)
-		     EmployeeMain.myEmployees.remove(e);
+	     EmployeeMain.formerEmployees.add(bardia);
+
+			//if (EmployeeMain.myEmployees.contains()) EmployeeMain.formerEmployees.add();
+		     EmployeeMain.myEmployees.remove(bardia);
+		     System.out.println(EmployeeMain.formerEmployees);
+
 	}
 	
 }

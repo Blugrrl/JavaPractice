@@ -18,7 +18,7 @@ public class EmployeeStatistics extends Employee {
 			System.out.println("1. Average salary in company");
 			System.out.println("2. Highest salary in company");
 			System.out.println("3. Lowest salary in company");
-			System.out.println("4. Total bonus in company");
+			System.out.println("4. Bonus per department / person");
 			System.out.println("5. Percentage of women in company");
 			System.out.println("6. Number of men employed in various departments");
 			System.out.println("7. Total nmb. of people in the company and % per department");
@@ -91,6 +91,21 @@ public class EmployeeStatistics extends Employee {
 			}
 		}
 		System.out.println("The lowest salary is: " + lowestSalary);
+	}
+	
+	public static void salaryBonus() {
+		int bonusCalculation = 0;
+		for (Employee e: EmployeeMain.myEmployees) {
+			if (e.department.equals("Admin")) {
+				 
+			}
+			else if (e.department.equals("Support")) {
+				
+			}
+			else if (e.department.equals("Development")) {
+				
+			}
+		}
 	}
 	
 	
