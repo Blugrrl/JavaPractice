@@ -1,12 +1,8 @@
 import java.util.Scanner;
 
-public class EmployeeStatistics extends Employee {
+public class EmployeeStatistics {
 
 	static Scanner sc = new Scanner(System.in);	
-	
-	public EmployeeStatistics(String name, double salary, int idNumber, String department, Gender gender) {
-		super(name, salary, idNumber, department, gender);
-	}
 	
 	public static void employeeStatisticsMenu() {
 		
@@ -61,13 +57,6 @@ public class EmployeeStatistics extends Employee {
 		}
 		}
 
-	
-	@Override
-	public double bonus() {
-		return 0;
-	}
-	
-	
 	
 	public static void averageSalary() {
 		int totalSalary = 0;
