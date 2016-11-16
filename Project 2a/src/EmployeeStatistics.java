@@ -12,9 +12,11 @@ public class EmployeeStatistics extends Employee {
 		
 		int choice = -1;
 		while (choice != 0 && choice != 10) {
-			System.out.println("\n------------------------------------------------------");
-			System.out.println("Employee Statistics Menu");
-			System.out.println("------------------------------------------------------");
+			System.out.println("\n ***************************************");
+			System.out.println(" **                                   ** ");
+			System.out.println(" **     Employee Statistics Menu      ** ");
+			System.out.println(" **                                   ** ");
+			System.out.println(" *************************************** ");
 			System.out.println("1. Average salary in company");
 			System.out.println("2. Highest salary in company");
 			System.out.println("3. Lowest salary in company");
@@ -25,7 +27,6 @@ public class EmployeeStatistics extends Employee {
 			System.out.println("8. Total nmb. of people in the company and % per department");
 			System.out.println("9. List of former employees");
 			System.out.println("10. Return to main menu");
-			System.out.println("11. Calculate again");
 			System.out.println("0. Exit");
 			System.out.println("Choose: ");
 		
@@ -51,8 +52,6 @@ public class EmployeeStatistics extends Employee {
 		case 9: listOfFormerEmployees();
 			break;
 		case 10: EmployeeMain.main(null);
-			break;
-		case 11: 
 			break;
 		case 0:  
 			System.out.println("\nThank you for using the program. Goodbye");
@@ -131,7 +130,7 @@ public class EmployeeStatistics extends Employee {
 		int adminCount = 0;
 		int developmentCount = 0;
 		int supportCount = 0;
-		for(Employee e: EmployeeMain.myEmployees) {
+		for(Employee e: EmployeeMain.myEmployees) { 
 			if(e.gender == Gender.MALE && e.department.equals("Admin")) {
 				adminCount++;
 			}

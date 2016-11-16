@@ -81,8 +81,8 @@ public class EmployeeManagement {
 							System.out.println("\nPlease enter a name");
 							String name = EmployeeMain.sc.nextLine();
 							e.setName(name);
-							System.out.println(
-									"\nThe user with staff number " + e.getStaffNumber() + " is updated");
+							System.out.println
+									("\nThe employee nr " + e.getStaffNumber() + " " +  e.getName() + " is updated");
 						}
 						break;
 						case 2: {
@@ -90,20 +90,20 @@ public class EmployeeManagement {
 							int salary = EmployeeMain.sc.nextInt();
 							EmployeeMain.sc.nextLine();
 							e.setSalary(salary);
-							System.out.println(
-									"The user with staff number " + e.getStaffNumber() + " is updated");
+							System.out.println
+									("\nThe employee nr " + e.getStaffNumber() + " " +  e.getName() + " is updated");
 						}
 						break;
 						case 3: {
-							System.out.println("Please enter a department");
+							System.out.println("Please enter a department, 1:Development, 2:Admin, 3:Support");
 							String department = EmployeeMain.sc.nextLine();
 							e.setDepartment(department);
-							System.out.println("The user with staff number " + e.getStaffNumber()+ " is updated");
+							System.out.println("\nThe employee nr " + e.getStaffNumber() + " " +  e.getName() + " is updated");
 						}
 						break;
 						default:
 
-							System.out.println("staffNumber: " + staffNumber + " is updated");
+							System.out.println("Incorrect input");
 							staffNumber = 0;
 
 						}
@@ -129,7 +129,7 @@ public class EmployeeManagement {
 			for (Employee e : EmployeeMain.myEmployees) {
 				System.out.println(e.toString());
 			}
-			System.out.println("\nSelect who to remove (id nr): ");
+			System.out.println("\nSelect which employee to remove (id nr): ");
 
 			try {
 				staffNumber = EmployeeMain.sc.nextInt();
@@ -147,7 +147,7 @@ public class EmployeeManagement {
 						removed = e;
 
 						//	formerEmployees(counter);
-						System.out.println("idNumber: " + staffNumber + " is removed");
+						System.out.println("\nThe employee nr " + e.getStaffNumber() + " " +  e.getName() + " has been removed");
 						staffNumber = 0;
 						break;
 					}
@@ -176,9 +176,11 @@ public class EmployeeManagement {
 		// in i loopen --> sätt denna till något annat
 
 		while (choice != 0) {
-			System.out.println("--------------------------------------------------------");
-			System.out.println("Welcome to employee management");
-			System.out.println("--------------------------------------------------------");
+			System.out.println("\n ***************************************");
+			System.out.println(" **                                   ** ");
+			System.out.println(" **     Employee Management Menu      ** ");
+			System.out.println(" **                                   ** ");
+			System.out.println(" *************************************** ");
 			System.out.println("1. Register employee");
 			System.out.println("2. Update employee");
 			System.out.println("3. Remove employee");
@@ -222,7 +224,7 @@ public class EmployeeManagement {
 
 		EmployeeMain.formerEmployees.add(removed);
 		EmployeeMain.myEmployees.remove(removed);
-		System.out.println(EmployeeMain.formerEmployees);
+		
 
 	}
 

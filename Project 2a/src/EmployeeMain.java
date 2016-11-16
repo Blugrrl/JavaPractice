@@ -55,9 +55,11 @@ public class EmployeeMain {
 	/*******************************      METHODS      ***************************************************/
 
 	private static void mainMenu() {
-		System.out.println("--------------------------------------------------------");
-		System.out.println("Welcome to our company");
-		System.out.println("--------------------------------------------------------");
+		System.out.println(" ***************************************** ");
+		System.out.println(" **                                     ** ");
+		System.out.println(" **     Welcome to NHB Software AB      ** ");
+		System.out.println(" **                                     ** ");
+		System.out.println(" ***************************************** ");
 		System.out.println("1. Employee management");
 		System.out.println("2. Employee statistics");
 		System.out.println("0. Exit");

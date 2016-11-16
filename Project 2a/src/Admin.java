@@ -2,7 +2,7 @@
 
 public class Admin extends Employee {
 
-	int employeeBonusBase = 3000;
+	int employeeBonusBase = 300;
 	double bonus;
 
 
@@ -13,7 +13,7 @@ public class Admin extends Employee {
 
 	
 	public double bonus() {
-	bonus = employeeBonusBase + getAge()*30;
+	bonus = employeeBonusBase*getAge();
 	return bonus; 
 	}
 	

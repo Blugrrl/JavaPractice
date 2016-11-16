@@ -13,7 +13,7 @@ public abstract class Employee {
 	private int staffNumber;
 
 
-	protected final double employeeBonusBase=3000;
+	protected final double employeeBonusBase=200;
 	
 	public Employee() {
 		
