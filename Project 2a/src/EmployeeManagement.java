@@ -60,7 +60,7 @@ public class EmployeeManagement {
 
 			staffNumber = EmployeeMain.sc.nextInt();
 
-			if (staffNumber > 0 && staffNumber <= EmployeeMain.myEmployees.size()) {
+			if (staffNumber  != -1) {
 				for (Employee e : EmployeeMain.myEmployees) {
 
 					if (e.getStaffNumber() == staffNumber) {
