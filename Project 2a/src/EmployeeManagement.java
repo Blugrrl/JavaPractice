@@ -1,13 +1,12 @@
 
-
 public class EmployeeManagement {
 
-	public static void RegisterEmployee() {
+	public static void registerEmployee() {
 
 		System.out.println("Enter name");
-		String name = EmployeeMain.sc.nextLine(); // empty cash									 
+		String name = EmployeeMain.sc.nextLine(); // empty cash
 		System.out.println("Enter salary");
-		double sal = EmployeeMain.sc.nextDouble(); // returns the value to sal 
+		double sal = EmployeeMain.sc.nextDouble(); // returns the value to sal
 		System.out.println("Enter id number (YYYYMMDDNN)");
 		int id = EmployeeMain.sc.nextInt();
 
@@ -28,46 +27,40 @@ public class EmployeeManagement {
 
 		}
 
-
 		switch (dep) {
-		case 1:   
-			EmployeeMain.myEmployees.add (new Development(name, sal, "Developer", id, gen));
+		case 1:
+			EmployeeMain.myEmployees.add(new Development(name, sal, "Developer", id, gen));
 			break;
-		case 2:	  
-			EmployeeMain.myEmployees.add (new Admin(name, sal, "Admin", id, gen));
+		case 2:
+			EmployeeMain.myEmployees.add(new Admin(name, sal, "Admin", id, gen));
 			break;
-		case 3:	  
-			EmployeeMain.myEmployees.add (new Support(name, sal, "Support", id, gen));
+		case 3:
+			EmployeeMain.myEmployees.add(new Support(name, sal, "Support", id, gen));
 			break;
-		default: 
+		default:
 
 		}
 
-
-
-		System.out.println("The employee named " + name +" is now registered");
+		System.out.println("The employee named " + name + " is now registered");
 
 		for (Employee e : EmployeeMain.myEmployees) {
-			//System.out.println(e.getStaffNumber() + " " + e.getName());
 			System.out.println(e.toString());
 		}
 
-
 	}
 
-	public static void UpdateEmployee() { // choice: name, salary, department
+	public static void updateEmployee() { // choice: name, salary, department
 
 		int staffNumber = -1;
 		for (Employee e : EmployeeMain.myEmployees) {
 			System.out.println(e.toString());
 		}
-		while (staffNumber != 0) {
 
 			System.out.println("\nSelect which employee to update: ");
 
 			staffNumber = EmployeeMain.sc.nextInt();
 
-			if (staffNumber != -1) {
+			if (staffNumber > 0 && staffNumber <= EmployeeMain.myEmployees.size()) {
 				for (Employee e : EmployeeMain.myEmployees) {
 
 					if (e.getStaffNumber() == staffNumber) {
@@ -81,28 +74,28 @@ public class EmployeeManagement {
 							System.out.println("\nPlease enter a name");
 							String name = EmployeeMain.sc.nextLine();
 							e.setName(name);
-							System.out.println
-									("\nThe employee nr " + e.getStaffNumber() + " " +  e.getName() + " is updated");
-						}
+							System.out.println("\nThe employee nr " + e.getStaffNumber() + " " + e.getName() + " is updated");
+							
 						break;
+						}
 						case 2: {
 							System.out.println("Please enter salary");
 							int salary = EmployeeMain.sc.nextInt();
 							EmployeeMain.sc.nextLine();
 							e.setSalary(salary);
-							System.out.println
-									("\nThe employee nr " + e.getStaffNumber() + " " +  e.getName() + " is updated");
-						}
+							System.out.println("\nThe employee nr " + e.getStaffNumber() + " " + e.getName() + " is updated");
 						break;
+						}
+						
 						case 3: {
 							System.out.println("Please enter a department, 1:Development, 2:Admin, 3:Support");
 							String department = EmployeeMain.sc.nextLine();
 							e.setDepartment(department);
-							System.out.println("\nThe employee nr " + e.getStaffNumber() + " " +  e.getName() + " is updated");
-						}
+							System.out.println("\nThe employee nr " + e.getStaffNumber() + " " + e.getName() + " is updated");
 						break;
+						}
+						
 						default:
-
 							System.out.println("Incorrect input");
 							staffNumber = 0;
 
@@ -112,15 +105,80 @@ public class EmployeeManagement {
 
 				}
 
-			}
-			else {
+			} else {
 				System.out.println("Illegal choice");
 				EmployeeMain.sc.nextLine();
 			}
-		}
 	}
 
-	public static void RemoveEmployee() {
+	public static void searchEmployee() { // choice: name, salary, department
+
+		int searchEmployee = -1;
+		String str = "";
+
+		System.out.println("\nSelect search method for employee, 1:Name, 2:Staff number, 3:Department ");
+		searchEmployee = EmployeeMain.sc.nextInt();
+
+		// (Employee e : EmployeeMain.myEmployees)
+		boolean found = false; //if found, dont print incorrect answer
+
+		switch (searchEmployee) {
+		case 1: {
+			EmployeeMain.sc.nextLine(); // clear buffer
+			System.out.println("\nPlease enter first name");
+			String name = EmployeeMain.sc.nextLine();
+			System.out.println("name: " + name);
+
+			for (Employee e : EmployeeMain.myEmployees) {
+				if (e.getName().substring(0, e.getName().indexOf(" ")).equals(name) ){
+					found = true;
+					System.out.println("\nThe employee with name " + e.getName() + " has been found");
+				}
+			}
+			break; 
+		}
+
+		case 2: {
+			System.out.println("\nPlease enter staff number");
+			int snumber = EmployeeMain.sc.nextInt();
+			for (Employee e : EmployeeMain.myEmployees) {
+				if (e.getStaffNumber() == snumber) {
+					System.out.println("\nThe employee with staff number " + e.getStaffNumber() + " " + e.getName() + " has been found");
+					found = true;
+				}
+
+			}
+			break;
+		}
+		case 3: {
+			System.out.println("\nPlease enter department, 1:Development, 2:Admin, 3:Support");
+			int depname = EmployeeMain.sc.nextInt();
+			if (depname == 1)
+				str = "Development";
+			if (depname == 2)
+				str = "Admin";
+			if (depname == 3)
+				str = "Support";
+			
+			System.out.println("\n " + str + ":");
+			for (Employee e : EmployeeMain.myEmployees) {
+				if (e.getDepartment() == str) {
+					System.out.println(e.toString());
+					found = true;
+
+				}
+			}
+			break;
+
+		}
+
+		}
+		if (!found)
+			System.out.println("Incorrect input, no such employee found");
+	}
+	
+	
+	public static void removeEmployee() {
 
 		int staffNumber = -1;
 
@@ -133,8 +191,7 @@ public class EmployeeManagement {
 
 			try {
 				staffNumber = EmployeeMain.sc.nextInt();
-			}
-			catch (Exception exception) {
+			} catch (Exception exception) {
 				staffNumber = -1;
 			}
 
@@ -142,33 +199,28 @@ public class EmployeeManagement {
 				int counter = 0;
 
 				for (Employee e : EmployeeMain.myEmployees) {
-					//om rätt idNumber
+
 					if (e.getStaffNumber() == staffNumber) {
 						removed = e;
 
-						//	formerEmployees(counter);
-						System.out.println("\nThe employee nr " + e.getStaffNumber() + " " +  e.getName() + " has been removed");
+						System.out.println(
+								"\nThe employee nr " + e.getStaffNumber() + " " + e.getName() + " has been removed");
 						staffNumber = 0;
 						break;
-					}
-					//räkna upp antal loopar, kollar om inget personnummer stämmer
-					else {
+					} else {
 						counter++;
 					}
-					//om idNumber doesn't exist
 					if (counter == EmployeeMain.myEmployees.size()) {
-						System.out.println("staffNumber doesn't exist");
+						System.out.println("Staffnumber does not exist, please try again");
 					}
 				}
 				formerEmployees(removed);
-			}
-			else {
+			} else {
 				System.out.println("Illegal choice");
-				EmployeeMain.sc.nextLine(); //clear buffer
+				EmployeeMain.sc.nextLine();
 			}
 		}
-	}	
-
+	}
 
 	public static void employeeMenu() {
 
@@ -178,13 +230,14 @@ public class EmployeeManagement {
 		while (choice != 0) {
 			System.out.println("\n ***************************************");
 			System.out.println(" **                                   ** ");
-			System.out.println(" **     Employee Management Menu      ** ");
+			System.out.println(" **    Employee Management Menu       ** ");
 			System.out.println(" **                                   ** ");
 			System.out.println(" *************************************** ");
 			System.out.println("1. Register employee");
 			System.out.println("2. Update employee");
-			System.out.println("3. Remove employee");
-			System.out.println("4. Back to main menu");
+			System.out.println("3. Search employee");
+			System.out.println("4. Remove employee");
+			System.out.println("5. Back to main menu");
 			System.out.println("0. Exit");
 			System.out.println("Choose: ");
 
@@ -196,22 +249,19 @@ public class EmployeeManagement {
 
 			if (choice == 1) {
 				EmployeeMain.sc.nextLine();
-				RegisterEmployee();
-			}
-			else if (choice == 2) {
-				UpdateEmployee();
-			}
-			else if (choice == 3) {
-				RemoveEmployee();
-			}
-			else if (choice == 4) {
+				registerEmployee();
+			} else if (choice == 2) {
+				updateEmployee();
+			} else if (choice == 3) {
+				searchEmployee();
+			} else if (choice == 4) {
+				removeEmployee();
+			} else if (choice == 5) {
 				EmployeeMain.main(null);
-			}
-			else if (choice == 0) {
+			} else if (choice == 0) {
 				System.out.println("\nGoodbye! Thank you for using our software");
 				break;
-			}
-			else {
+			} else {
 				System.out.print("Illegal choice!\n\n");
 				EmployeeMain.sc.nextLine(); // clear buffer
 			}
@@ -224,7 +274,6 @@ public class EmployeeManagement {
 
 		EmployeeMain.formerEmployees.add(removed);
 		EmployeeMain.myEmployees.remove(removed);
-		
 
 	}
 

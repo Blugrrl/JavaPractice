@@ -1,3 +1,4 @@
+
 import java.util.Calendar;
 
 
@@ -11,8 +12,6 @@ public abstract class Employee {
 	public Gender gender;
 	private int staffNumber;
 
-
-	protected final double employeeBonusBase=200;
 	
 	public Employee() {
 		

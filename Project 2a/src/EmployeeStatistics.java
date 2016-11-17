@@ -10,7 +10,7 @@ public class EmployeeStatistics {
 		while (choice != 0 && choice != 10) {
 			System.out.println("\n ***************************************");
 			System.out.println(" **                                   ** ");
-			System.out.println(" **     Employee Statistics Menu      ** ");
+			System.out.println(" **    Employee Statistics Menu       ** ");
 			System.out.println(" **                                   ** ");
 			System.out.println(" *************************************** ");
 			System.out.println("1. Average salary in company");
@@ -28,33 +28,33 @@ public class EmployeeStatistics {
 		
 		choice = sc.nextInt();
 		
-		switch (choice) {
-		case 1: averageSalary();
-			break;
-		case 2: highestSalary();
-			break;
-		case 3: lowestSalary();
-			break;
-		case 4: salaryBonus();
-			break;
-		case 5: bonusPerEmployee();
-			break;
-		case 6: womenPercentage();
-			break;
-		case 7: menPercentage();
-			break;
-		case 8:	numberOfEmployees();
-			break;
-		case 9: listOfFormerEmployees();
-			break;
-		case 10: EmployeeMain.main(null);
-			break;
-		case 0:  
-			System.out.println("\nThank you for using the program. Goodbye");
-			break;
-		default: System.out.println("Sorry, wrong input.");
+			switch (choice) {
+			case 1: averageSalary();
+				break;
+			case 2: highestSalary();
+				break;
+			case 3: lowestSalary();
+				break;
+			case 4: salaryBonus();
+				break;
+			case 5: bonusPerEmployee();
+				break;
+			case 6: womenPercentage();
+				break;
+			case 7: menPercentage();
+				break;
+			case 8:	numberOfEmployees();
+				break;
+			case 9: listOfFormerEmployees();
+				break;
+			case 10: EmployeeMain.main(null);
+				break;
+			case 0:  
+				System.out.println("\nThank you for using the program. Goodbye");
+				break;
+			default: System.out.println("Sorry, wrong input.");
 				}
-		}
+			}
 		}
 
 	

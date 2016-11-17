@@ -15,12 +15,15 @@ public class EmployeeMain {
 	static int choice = -1;
 	static ArrayList<Employee> myEmployees = new ArrayList<Employee>();
 	static ArrayList<Employee> formerEmployees = new ArrayList<Employee>();
-
+	static int firstTime = 0;
 	
 	public static void main(String[] args) {
 
+		if (firstTime == 0) {
 		seedEmployees(); //seed the ArrayList with Employees
-		formerEmployees(); 
+		formerEmployees();
+		firstTime++;
+		}
 		
 		while (choice != 0) {		
 			EmployeeMain.mainMenu();
