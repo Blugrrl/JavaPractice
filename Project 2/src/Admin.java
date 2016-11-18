@@ -2,22 +2,17 @@
 
 public class Admin extends Employee {
 
-	int age;
+	int employeeBonusBase = 300;
 	double bonus;
 
 
 	public Admin (String name, double salary, String department, int idNumber, Gender gender) {  
-	super(name, salary, idNumber, department, gender);
-
+		super(name, salary, idNumber, department, gender);
 	}
 
-	
+
 	public double bonus() {
-	bonus = employeeBonusBase + age*30;
-	return bonus; 
-
-
-
-	}
-
+		bonus = employeeBonusBase*getAge();
+		return bonus; 
+	}	
 }
