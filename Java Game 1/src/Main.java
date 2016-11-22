@@ -29,6 +29,7 @@
 	            } else {
 	                running = false;
 	                System.out.println("Game over");
+	                scan.close();
 	            }
 	        }
 	    }

@@ -85,5 +85,6 @@ public class Main {
 	}
 	while(again.equalsIgnoreCase("yes"));
 	System.out.println("Goodbye!");
+	scanner.close();
 	}
 }

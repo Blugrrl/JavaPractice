@@ -24,7 +24,7 @@ public class Movies {
 	}
 	
 	public void setMovieName() {
-		this.movieName = movieName;
+		//this.movieName = movieName;
 	}
 	
 	public String getDirector() {

@@ -5,8 +5,8 @@ public class Triangle {
 	private double height;
 	
 	public Triangle() {
-		this.base = base;
-		this.height = height;
+		//this.base = base;
+		//this.height = height;
 	}
 
 	public double getBase() {

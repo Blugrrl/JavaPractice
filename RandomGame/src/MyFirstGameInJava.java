@@ -76,6 +76,7 @@ public class MyFirstGameInJava {
 		}
 				
 		System.out.println("The end! Hope you enjoyed your adventure!!");
+		scan.close();
 	}
 
 }

@@ -9,6 +9,7 @@ public class T1 {
 		String s = "123";
 		int n = Integer.parseInt(s);  //Only way of converting String to int, doesnt work with brackets like (int) d
 		
+		System.out.println(i + n);
 		//int n = (int) s;  Doesnt work
 
 	}

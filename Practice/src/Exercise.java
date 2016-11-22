@@ -17,6 +17,7 @@ public class Exercise {
 		result = a + d;
 		
 		System.out.println("The result is: " + result);
+		userInput.close();
 	}
 
 }

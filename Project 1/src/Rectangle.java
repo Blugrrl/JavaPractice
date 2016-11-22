@@ -5,8 +5,8 @@ public class Rectangle {
 		private double rectangleLength;
 		
 		public Rectangle() {
-			this.rectangleHeight = rectangleHeight;
-			this.rectangleLength = rectangleLength;
+			//this.rectangleHeight = rectangleHeight;
+			//this.rectangleLength = rectangleLength;
 		}
 		public double getHeight() {
 			return rectangleHeight;

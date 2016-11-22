@@ -16,7 +16,7 @@ public class Exercise2b {
 		double result = e + d;
 		
 		System.out.println("The result is: " + result);
-
+		userInput1.close();
 	}
 
 }
